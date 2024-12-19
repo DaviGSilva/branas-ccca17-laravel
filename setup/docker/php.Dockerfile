@@ -9,7 +9,8 @@ RUN apt update \
     && docker-php-ext-install zip pdo pdo_mysql
 
 RUN pecl install -o -f redis-6.1.0 \
-    && docker-php-ext-enable redis
+    && pecl install xdebug-3.4.0 \
+    && docker-php-ext-enable redis xdebug
 
 # Latest release
 COPY --from=composer/composer /usr/bin/composer /usr/bin/composer

@@ -14,6 +14,11 @@ services:
       dockerfile: php.Dockerfile
     volumes:
       - ./:/var/www/html
+      - ./setup/docker/php/php.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+      - ./setup/docker/php/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+      - ./setup/docker/xdebug/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    extra_hosts:
+      - 'host.docker.internal=host-gateway'
 
   node:
     build:
