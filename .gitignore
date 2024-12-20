@@ -1,4 +1,5 @@
 /.phpunit.cache
+/coverage
 /node_modules
 /public/build
 /public/hot
@@ -11,6 +12,7 @@
 .env.production
 .phpactor.json
 .phpunit.result.cache
+coverage.xml
 Homestead.json
 Homestead.yaml
 auth.json
